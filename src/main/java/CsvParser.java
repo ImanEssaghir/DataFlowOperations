@@ -11,27 +11,28 @@ import java.util.List;
 
 public class CsvParser {
 
-  private List fileRows = new ArrayList();
+  private List<String[]> fileRows = new ArrayList<>();
   /* List to hold all fields from the file
   As it is a csv of only strings, we could make it a String
   But it pretty common to have to handle multiple types
-      So you either use a Class or Blank Object type (like we are here)
+      So you either use a Class or Blank Object type
    */
 
+  /** CsvParser - Reads csv Files using OpenCSV
+   * On load, check if file exists & then load it into fileRows
+   * @param infile the file to be opened with path information
+   */
   public CsvParser(String infile) throws IOException, CsvValidationException {
-    /** CsvParser - Reads csv Files using OpenCSV
-     * On load, check if file exsts & then load it into fileRows
-     * @param infile the file to be opened with path information
-     */
+
     if (checkFile(infile)) {
       readCsv(infile);
     }
   }
 
+  /** readCsv: Read CSV file and load into our fileRows list
+   * @param csvinfile CSV file with path information for loading
+   */
   protected void readCsv(String csvinfile) throws IOException, CsvValidationException {
-    /** readCsv: Read CSV file and load into our fileRows list
-     * @param csvinfile CSV file with path information for loading
-     */
 
     // Open a file & input stream for use with CSVReader (to create a reader object)
     FileInputStream csvStream = new FileInputStream(csvinfile);
@@ -43,6 +44,7 @@ public class CsvParser {
           But making it a String[] allows it to cast later
        Read the file and load each line (split by default ",") into our List
      */
+
     String[] nextLine;
     while ((nextLine = reader.readNext()) != null) {
       fileRows.add(nextLine);
@@ -53,11 +55,12 @@ public class CsvParser {
   }
 
   protected void writeCsv(String csvoutfile) {
-    // place holder for write method (we'll add later with tests)
+    // Place holder for write method (
+    // Add code here for future assignment
   }
 
+  /* printCsv - Printout the Csv */
   protected void printCsv() {
-    /** printCsv - Printout the Csv */
 
     for (Object row : fileRows) {
       /*
@@ -71,14 +74,14 @@ public class CsvParser {
     }
   }
 
+  /** checkFile - checks to ensure the file exists
+   * @return false on file not found, true on found
+   */
   private boolean checkFile(String csvfile) {
-    /** checkFile - checks to ensure the file exists
-     * @return false on file not found, true on found
-     */
     if (!Files.exists(Paths.get(csvfile))) {
       System.out.println("File does not exist");
       return false;
-      // may change this to throw an exception
+      // Could be changed to throw an exception
     }
     return true;
   }

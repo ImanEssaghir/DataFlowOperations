@@ -1,4 +1,5 @@
 public class AuthorParser {
+
   private String author_name;
   private String author_email;
   private String author_url;
@@ -26,4 +27,5 @@ public class AuthorParser {
   protected String getUrl() {
     return author_url;
   }
+
 }
