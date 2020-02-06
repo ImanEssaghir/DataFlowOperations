@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class CsvParserTest {
 
   /**
-   * @TODO Add tests for print operations (then DB ones)
+   * TODO Add tests for print operations (then DB ones)
    */
 
   CsvParser csv;
