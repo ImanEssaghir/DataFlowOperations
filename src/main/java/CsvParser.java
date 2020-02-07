@@ -1,6 +1,8 @@
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +16,7 @@ public class CsvParser {
   private List<String[]> fileRows = new ArrayList<>();
   /* List to hold all fields from the file
   As it is a csv of only strings, we could make it a String
-  But it pretty common to have to handle multiple types
+  But it is pretty common to have to handle multiple types
       So you either use a Class or Blank Object type
    */
 
@@ -54,9 +56,19 @@ public class CsvParser {
     reader.close();
   }
 
-  protected void writeCsv(String csvoutfile) {
+  protected void writeCsv(String csvoutfile) throws IOException {
     // Place holder for write method (
     // Add code here for future assignment
+
+    CSVWriter writer = new CSVWriter(new FileWriter(csvoutfile));
+
+    // Needs to be modified,
+    //Create record and write it to file
+    /* String [] record = data ;
+    writer.writeNext(record); */
+
+    //close the writer
+    writer.close();
   }
 
   /* printCsv - Printout the Csv */
