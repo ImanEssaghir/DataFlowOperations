@@ -11,3 +11,7 @@
 
 - First iteration:  Reading from a CSV file and then printing it out.
 - Second iteration: Writing the results of select queries to a JSON file.
+
+## Acknowledgment
+
+Professor Josiah Greenwell's project and class slides and videos.
