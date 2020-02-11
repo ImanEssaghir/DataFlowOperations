@@ -11,6 +11,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/* Code provided by Professor Josiah Greenwell */
+
 public class CsvParser {
 
   private List<String[]> fileRows = new ArrayList<>();

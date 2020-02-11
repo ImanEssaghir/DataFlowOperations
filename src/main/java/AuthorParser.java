@@ -1,3 +1,4 @@
+/* Code provided by Professor Josiah Greenwell */
 public class AuthorParser {
 
   private String author_name;
