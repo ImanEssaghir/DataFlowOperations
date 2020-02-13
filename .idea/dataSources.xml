@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="BookStore" uuid="a59309e7-14ac-433b-a374-72d918404efd">
+    <data-source source="LOCAL" name="BookStore.db" uuid="dd782462-6499-45f2-b339-1bcab8dd33fa">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\essag\IdeaProjects\DataFlowOperations\src\Data\BookStore.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/Desktop/Spring2020/Data_Engineering/Project/CsvToDatabase-master/CsvToDatabase-master/src/Data/BookStore.db</jdbc-url>
     </data-source>
   </component>
 </project>

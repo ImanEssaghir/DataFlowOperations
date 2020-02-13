@@ -13,6 +13,7 @@ public class Main {
         CsvParser csvP = new CsvParser("src/Data/bookstore_report2.csv");
         csvP.printCsv();
 
+        // Load a json file:
         //  Create instance of GSON
         Gson gson = new Gson();
 
