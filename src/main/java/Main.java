@@ -3,10 +3,19 @@ import com.google.gson.stream.JsonReader;
 import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 /* Code provided by Professor Josiah Greenwell */
 
 public class Main {
+
+    static final String JDBC_DRIVER = "org.h2.Driver";
+    static final String DB_URL = "jdbc:h2:./res/palace";
+    static final String USER = "";
+    static final String PASS = "";
+    static Connection conn;
 
     public static void main(String[] args) throws IOException, CsvValidationException {
         // Call the parser
@@ -26,6 +35,22 @@ public class Main {
         // Check the data to print the name
         for (var element : authors) {
             System.out.println(element.getName());
+        }
+
+        System.out.println();
+        testDatabaseConnection();
+
+    }
+
+    // Database Connection Test
+    private static void testDatabaseConnection() {
+        try {
+            Class.forName(JDBC_DRIVER);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            System.out.println("Database Connected!");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Database Failed to Connect!");
         }
     }
 }
